@@ -1,0 +1,27 @@
+[project]
+name = "notion-mirror"
+version = "0.1.0"
+description = "Local mirror of a Notion workspace in a git repository: Markdown + attachments + databases, with version history."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+notion-mirror = "notion_mirror.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["notion_mirror"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,15 @@
+# Credentials — never into the repo
+.env
+
+# Internal backup state (dedupe, incremental cache)
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
