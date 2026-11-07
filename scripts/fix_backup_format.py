@@ -18,8 +18,10 @@ import json
 import sys
 from pathlib import Path
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
 # Add the project to sys.path
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(PROJECT_ROOT))
 
 from notion_mirror.markdown import post_process
 
@@ -105,9 +107,9 @@ def fix_markdown_files(root: Path, page_index: dict, ds_index: dict) -> tuple[in
 
 
 def main() -> int:
-    root = Path("backup")
+    root = PROJECT_ROOT / "backup"
     if not root.is_dir():
-        print("backup/ directory not found. Run from the project root.", file=sys.stderr)
+        print(f"backup/ directory not found at {root}.", file=sys.stderr)
         return 1
 
     manifest = load_manifest(root)

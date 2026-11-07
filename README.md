@@ -183,3 +183,5 @@ python -m pytest          # full suite (offline: the API is simulated)
 ```
 
 Code layout in `notion_mirror/`: `http.py` (paced client with retries), `api.py` (endpoints), `inventory.py` (enumeration and reconciliation), `tree.py` (mirror paths), `backup.py` (orchestrator), `sidecar.py`/`manifest.py` (deterministic output), `restore.py` (recovery), `files.py` (attachments with dedupe).
+
+Utilities in `scripts/`: `fix_backup_format.py` — one-off migration that applies the current Markdown post-processing to `.md` files already in `backup/` (run it manually after changing `markdown.py`; normal backups post-process automatically as they download).
