@@ -1,9 +1,5 @@
 # notion-mirror
 
-> **This repository (`notion-mirror`) is my private mirror**: it contains the tool's source code
-> **and** the actual backup of my Notion workspace in `backup/`. The tool itself is published separately
-> for the community (see public repo TBD).
-
 Local mirror of your [Notion](https://notion.so) workspace in a git repository.
 
 - **All your content** — pages, databases (schema and rows), attachments, icons, covers and comments — is downloaded into `backup/` as Markdown + JSON + binary files.
